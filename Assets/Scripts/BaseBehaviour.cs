@@ -18,6 +18,8 @@ public class BaseBehaviour : MonoBehaviour
     public Agent agentScript;
 
     public Seek seekScript;
+    public BoidCohesion boidcoh;
+    public BoidSeparation boidsep;
     public Flee fleeScript;
 
     public float maxSpeed;
@@ -38,9 +40,9 @@ public class BaseBehaviour : MonoBehaviour
         agentScript = gameObject.AddComponent<Agent>(); //add agent
         agentScript.maxSpeed = maxSpeed;
 
-        changeState(UnitFSM.Idle);
+        //changeState(UnitFSM.Seek);
     }
-
+    /*
     // Update is called once per frame
     void Update()
     {
@@ -56,7 +58,8 @@ public class BaseBehaviour : MonoBehaviour
             }
         }
     }
-
+    */
+    /*
     public void changeState(UnitFSM new_state)
     {
 
@@ -64,7 +67,6 @@ public class BaseBehaviour : MonoBehaviour
 
         switch (new_state)
         {
-            /*
             case UnitFSM.Idle:
 
                 if(gameObject.GetComponent<idle_script>() == null)
@@ -75,19 +77,18 @@ public class BaseBehaviour : MonoBehaviour
                 DestroyImmediate(attack);
 
                 break;
-            */
+
             case UnitFSM.Seek:
 
-                if (gameObject.GetComponent<SeekScript>() == null)
+                if (gameObject.GetComponent<seek_script>() == null)
                 {
-                    seek = gameObject.AddComponent<SeekScript>();
+                    seek = gameObject.AddComponent<seek_script>();
                 }
-                /*
                 DestroyImmediate(idle);
                 DestroyImmediate(attack);
-                */
+
                 break;
-            /*
+
             case UnitFSM.Attack:
 
                 if (gameObject.GetComponent<attack_script>() == null)
@@ -98,7 +99,8 @@ public class BaseBehaviour : MonoBehaviour
                 DestroyImmediate(idle);
 
                 break;
-            */
+
         }
     }
+    */
 }
